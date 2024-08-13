@@ -4,6 +4,8 @@ import navlogo from "../../assets/nav.png";
 import { RiMenu2Fill } from "react-icons/ri";
 import { IoSearchOutline } from "react-icons/io5";
 import axios from "axios";
+import { Link, NavLink } from "react-router-dom";
+
 const API_URL = "https://dummyjson.com";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,7 +33,7 @@ const Header = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-  const links = ["Каталог", "Доставка", " Условия", "Контакты"];
+  // const links = ["Каталог", "Доставка", " Условия", "Контакты"];
   const number = ["+ 375 736 463 64 72  /+ 375 736 463 64 72"];
   return (
     <div className="header bg-slate-200 mb-32">
@@ -42,13 +44,21 @@ const Header = () => {
           </div>
           <div className={`nav__collect ${isMenuOpen ? "show" : ""}`}>
             <ul className="navbar__collection flex gap-7">
-              {links?.map((el, index) => (
-                <li key={index} className="navbar__item">
-                  <a href="#">
-                    <span>{el}</span>
-                  </a>
-                </li>
-              ))}
+              <NavLink className={"text-[#000] "} to={"/"}>
+                Home
+              </NavLink>
+              <NavLink className={"text-[#000] "} to={"/Каталог"}>
+                Каталог
+              </NavLink>
+              <NavLink className={"text-[#000] "} to={"/Доставка"}>
+                Доставка
+              </NavLink>
+              <NavLink className={"text-[#000] "} to={"/Условия"}>
+                Условия
+              </NavLink>
+              <NavLink className={"text-[#000] "} to={"/Контакты"}>
+                Контакты
+              </NavLink>
             </ul>
           </div>
           <div className="div">

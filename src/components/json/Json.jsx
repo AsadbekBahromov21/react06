@@ -17,7 +17,7 @@ const Json = () => {
       .then((res) => setCategorey(res.data))
       .catch((err) => console.log(err));
   }, []);
-  console.log(selectCategory);
+  // console.log(selectCategory);
 
   useEffect(() => {
     setLoading(true);
